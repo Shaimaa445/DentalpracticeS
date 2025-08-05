@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Staff Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Dental Practice</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="book.html">Book Appointment/Register</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="stafflogin.html">Staff Log In</a>
+    </nav>
+    <img src="images/logo.png" alt="Logo" class="logo" />
+  </header>
+
+  <main>
+    <h2>Staff Dashboard</h2>
+
+   <section>
+  <h3>List of Patients</h3>
+
+  <label for="patientSearch"><strong>Search by name:</strong></label>
+  <input type="text" id="patientSearch" placeholder="Enter a patient's name..." style="margin: 10px 0; padding: 6px; width: 100%; max-width: 300px;" />
+
+  <table id="patientsTable">
+    <tr><th>Name</th><th>Email</th><th>Phone</th></tr>
+    <tr><td>Sarah Ahmed</td><td>sarah@example.com</td><td>123456</td></tr>
+    <tr><td>Ali Youssef</td><td>ali@example.com</td><td>654321</td></tr>
+    <tr><td>Lina Farouk</td><td>lina@example.com</td><td>789123</td></tr>
+    <tr><td>Mohamed Salem</td><td>mohamed@example.com</td><td>321987</td></tr>
+  </table>
+</section>
+
+<script>
+  const searchInput = document.getElementById("patientSearch");
+  const table = document.getElementById("patientsTable");
+  const rows = table.getElementsByTagName("tr");
+
+  searchInput.addEventListener("keyup", function () {
+    const filter = searchInput.value.toLowerCase();
+    for (let i = 1; i < rows.length; i++) {
+      const nameCell = rows[i].getElementsByTagName("td")[0];
+      const nameText = nameCell.textContent.toLowerCase();
+      rows[i].style.display = nameText.includes(filter) ? "" : "none";
+    }
+  });
+</script>
+
+<section>
+  <h3>Future Appointments</h3>
+
+  <label for="serviceFilter"><strong>Filter by service:</strong></label>
+  <select id="serviceFilter" style="margin: 10px 0; padding: 6px;">
+    <option value="all">All Services</option>
+    <option value="Teeth Cleaning">Teeth Cleaning</option>
+    <option value="Braces">Braces</option>
+    <option value="Check-up">Check-up</option>
+  </select>
+
+  <table id="appointmentsTable">
+    <tr><th>Patient</th><th>Date</th><th>Service</th></tr>
+    <tr><td>Omar Khaled</td><td>2025-08-01</td><td>Teeth Cleaning</td></tr>
+    <tr><td>Layla Mansour</td><td>2025-08-03</td><td>Braces</td></tr>
+    <tr><td>Jana Farid</td><td>2025-08-05</td><td>Check-up</td></tr>
+    <tr><td>Salma Kamel</td><td>2025-08-06</td><td>Teeth Cleaning</td></tr>
+  </table>
+</section>
+
+<script>
+  const serviceFilter = document.getElementById("serviceFilter");
+  const appointmentRows = document.getElementById("appointmentsTable").getElementsByTagName("tr");
+
+  serviceFilter.addEventListener("change", function () {
+    const selectedService = serviceFilter.value;
+
+    for (let i = 1; i < appointmentRows.length; i++) {
+      const serviceCell = appointmentRows[i].getElementsByTagName("td")[2];
+      const serviceText = serviceCell.textContent;
+
+      appointmentRows[i].style.display = 
+        selectedService === "all" || serviceText === selectedService ? "" : "none";
+    }
+  });
+</script>
+
+       <section>
+      <h3>Past Appointments</h3>
+      <table>
+        <tr><th>Patient</th><th>Date</th><th>Service</th></tr>
+        <tr><td>Mariam Salim</td><td>2025-06-10</td><td>Braces</td></tr>
+        <tr><td>Ahmed Zaki</td><td>2025-07-01</td><td>Check-up</td></tr>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>Phone: 123 | Email: shaimaa@gmail.com</p>
+    <img src="images/instagram.png" alt="Instagram" class="social-icon" />
+    <img src="images/facebook.png" alt="Facebook" class="social-icon" />
+  </footer>
+
+</body>
+</html>

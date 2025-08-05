@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book Appointment - Dental Practice</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Dental Practice</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="book.html">Book Appointment/Register</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="stafflogin.html">Staff Log In</a>
+    </nav>
+    <img src="images/logo.png" alt="Logo" class="logo" />
+  </header>
+
+  <main class="form-section">
+    <h2>Book your appointment/Register</h2>
+
+    <form>
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required />
+
+      <label for="service">Service:</label>
+      <select id="service" name="service" required>
+        <option value="">-- Please choose --</option>
+        <option value="teeth-cleaning">Teeth Cleaning</option>
+        <option value="braces">Braces</option>
+        <option value="dental-checkups">Dental Checkups</option>
+      </select>
+
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" required />
+
+      <label for="time">Time:</label>
+      <input type="time" id="time" name="time" required />
+
+      <button type="submit" class="book-now">Book Now</button>
+    </form>
+
+    <p class="confirmation-message">[Confirmation message will appear here after submission]</p>
+  </main>
+
+ <footer>
+  <p>Phone: 123 | Email: shaimaa@gmail.com</p>
+  <div class="social-icons">
+    <img src="images/instagram.png" alt="Instagram" />
+    <img src="images/facebook.png" alt="Facebook" />
+  </div>
+</footer>
+
+
+</body>
+</html>
